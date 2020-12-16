@@ -1,20 +1,4 @@
-/*-------------------------------------------------------------------/
-*	 ¹¤³ÌÄ£°åÏµÍ³
-*
-*°æ±¾£º1.0
-*×÷Õß£ºËïËÉ 
-* 
-*µØµã£ººÓ±±¹¤³Ì´óÑ§ ´´ÐÂÊµÑéÊÒ
-*Ê±¼ä£º2018Äê12ÔÂ30ÈÕ
-*ËµÃ÷£ºÊ¹ÓÃÐ¾Æ¬STM32F103VCT6
-*¹¦ÄÜ£º1.  
-*      2.  
-*      3.  
-*      4.  
-*      5.  
-*      6. 
-*      7.  
-*-------------------------------------------------------------------*/
+
 #include "stm32f10x.h"
 #include <stdio.h>
 #include "nvic.h"
@@ -36,7 +20,7 @@ int main(void)
 	ADC1_Init();
 	DAC1_Init();
 	Key_GPIO_Config();
-	printf("³õÊ¼»¯Íê±Ï\r\n");
+	printf("åˆå§‹åŒ–å®Œæ¯•\r\n");
   /* Infinite loop */
   while (1)
   {
@@ -50,7 +34,7 @@ int main(void)
 		while (KEY1 == 0x01 )
 				; 
 
-					printf("°´¼ü1ÒÑ±»°´ÏÂ\r\n");					
+					printf("æŒ‰é”®1å·²è¢«æŒ‰ä¸‹\r\n");					
           VoiceMFlag=1;
 
 		}
@@ -64,7 +48,7 @@ int main(void)
 		while (KEY2 == 0x01 )
 				; 
 	
-					printf("°´¼ü2ÒÑ±»°´ÏÂ\r\n");	
+					printf("æŒ‰é”®2å·²è¢«æŒ‰ä¸‹\r\n");	
     		VoicePlay=1;
 
 		}
@@ -74,16 +58,16 @@ int main(void)
 	{
 	        VoicePlay=0;
 	         TIM_Cmd(TIM2, ENABLE);	
-		      printf("¿ªÊ¼²¥·ÅFlashÖÐÊý¾Ý\r\n");
+		      printf("å¼€å§‹æ’­æ”¾Flashä¸­æ•°æ®\r\n");
 	}
 	
 	if(VoiceMFlag==1)
 	{
 	    VoiceMFlag=0;
 //		  erase_flash(addressFlash,79);
-//		  printf("Flash²Á³ö³É¹¦\r\n");
-		  TIM_Cmd(TIM3, ENABLE);  //¿ªÆô¶¨Ê±Æ÷3
-		  printf("¿ªÊ¼Â¼Òô\r\n");
+//		  printf("Flashæ“¦å‡ºæˆåŠŸ\r\n");
+		  TIM_Cmd(TIM3, ENABLE);  //å¼€å¯å®šæ—¶å™¨3
+		  printf("å¼€å§‹å½•éŸ³\r\n");
 	}
 		
   }
